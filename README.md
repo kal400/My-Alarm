@@ -47,4 +47,4 @@ A powerful Android alarm clock app with smart wake-up challenges, sleep tracking
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/zen-wake-alarm.git
+git clone https://github.com/Kal400/My-Alarm.git
