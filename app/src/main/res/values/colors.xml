@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_orange">#FF7B4A</color>
+    <color name="primary_blue">#4A90E2</color>
+    <color name="primary_purple">#9B6B9E</color>
+    <!-- Gradients -->
+    <color name="gradient_start">#1A1F2E</color>
+    <color name="gradient_end">#2A3045</color>
+    <color name="gradient_morning_start">#2A3045</color>
+    <color name="gradient_morning_end">#FF7B4A</color>
+
+    <!-- UI Colors -->
+    <color name="card_background">#F8F9FF</color>
+    <color name="card_background_dark">#2D3349</color>
+    <color name="text_primary">#1A1F2E</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_light">#FFFFFF</color>
+    <color name="divider">#E5E7EB</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+</resources>

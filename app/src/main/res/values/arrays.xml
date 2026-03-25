@@ -1,0 +1,16 @@
+<resources>
+    <string-array name="challenge_types">
+        <item>Math Challenge</item>
+        <item>Shake Challenge</item>
+        <item>Memory Matrix</item>
+        <item>Pattern Puzzle</item>
+        <item>Typing Trial</item>
+    </string-array>
+
+    <string-array name="difficulty_levels">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+        <item>Insane</item>
+    </string-array>
+</resources>

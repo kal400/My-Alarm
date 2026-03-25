@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timer"
+        android:textColor="@color/text_light"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:id="@+id/timerDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textColor="@color/text_light"
+        android:textSize="56sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <EditText
+            android:id="@+id/hoursInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/card_background_dark"
+            android:padding="12dp"
+            android:textColor="@color/text_light"
+            android:textColorHint="@color/text_secondary"
+            android:hint="Hours"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/minutesInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/card_background_dark"
+            android:padding="12dp"
+            android:textColor="@color/text_light"
+            android:textColorHint="@color/text_secondary"
+            android:hint="Minutes"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <EditText
+            android:id="@+id/secondsInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/card_background_dark"
+            android:padding="12dp"
+            android:textColor="@color/text_light"
+            android:textColorHint="@color/text_secondary"
+            android:hint="Seconds"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start"
+            android:textColor="@color/text_light"
+            android:background="@drawable/button_primary"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pause"
+            android:textColor="@color/text_light"
+            android:background="@drawable/button_secondary"
+            android:enabled="false"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:textColor="@color/text_light"
+            android:background="@drawable/button_secondary"
+            android:enabled="false"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

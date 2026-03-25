@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="@dimen/spacing_medium">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background_dark"
+            android:hint="Search"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:paddingRight="@dimen/spacing_medium"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_light"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/spacing_small"
+            android:drawableTint="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/weatherText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:text="72° F"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_medium"
+            android:drawableStart="@drawable/ic_sun"
+            android:drawablePadding="@dimen/spacing_tiny"
+            android:drawableTint="@color/primary_orange" />
+    </LinearLayout>
+
+    <!-- Greeting -->
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xlarge"
+        android:text="GOOD MORNING"
+        android:textColor="@color/text_light"
+        android:textSize="@dimen/text_small"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <!-- Time Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/timeCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:cardBackgroundColor="@color/card_background_dark"
+        app:cardCornerRadius="@dimen/radius_large"
+        app:cardElevation="@dimen/elevation_medium"
+        app:layout_constraintTop_toBottomOf="@id/greetingText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_large"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/currentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7:30"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_time"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/currentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="WED, MAY 15"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_medium" />
+
+            <TextView
+                android:id="@+id/nextEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="UPCOMING: TEAM MEETING"
+                android:textColor="@color/primary_orange"
+                android:textSize="@dimen/text_small"
+                android:background="@drawable/card_background"
+                android:padding="@dimen/spacing_small" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Next Alarm -->
+    <LinearLayout
+        android:id="@+id/nextAlarmLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/timeCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/nextAlarmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏰ NEXT ALARM: 7:30 AM"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_medium" />
+
+        <TextView
+            android:id="@+id/timerCountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏱️ TIMERS: 2"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_medium" />
+    </LinearLayout>
+
+
+    <!-- Quick Navigation -->
+    <LinearLayout
+        android:id="@+id/quickNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/nextAlarmLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Sleep Button -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/spacing_small">
+
+            <TextView
+                android:id="@+id/sleepButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="😴"
+                android:textSize="24sp"
+                android:background="@drawable/card_background_dark"
+                android:gravity="center"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="Sleep"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+
+        <!-- Stats Button -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/spacing_small">
+
+            <TextView
+                android:id="@+id/statsButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="📊"
+                android:textSize="24sp"
+                android:background="@drawable/card_background_dark"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="Stats"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+
+        <!-- Timer Button (Replacing Profile) -->
+        <LinearLayout
+            android:id="@+id/timerButtonIcon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/spacing_small">
+
+            <TextView
+                android:id="@+id/timerButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="⏱️"
+                android:textSize="24sp"
+                android:background="@drawable/card_background_dark"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:text="Timer"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!-- ADD THIS - Alarms RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/alarmsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        app:layout_constraintTop_toBottomOf="@id/quickNav"
+        app:layout_constraintBottom_toTopOf="@id/fabNewAlarm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <!-- FAB - New Alarm -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNewAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_large"
+        android:src="@drawable/ic_add"
+        android:contentDescription="New Alarm"
+        app:backgroundTint="@color/primary_orange"
+        app:elevation="@dimen/elevation_high"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

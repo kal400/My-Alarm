@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_morning">
+
+    <!-- Sunrise Animation Layer (you'll animate this in code) -->
+    <View
+        android:id="@+id/sunriseOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sunrise_animation" />
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/spacing_large">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/alarmTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7:30 AM"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_xxxlarge"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:shadowColor="#33000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <!-- Weather & Calendar -->
+        <TextView
+            android:id="@+id/weatherInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="☀️ 68° • Mostly Sunny"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_large" />
+
+        <TextView
+            android:id="@+id/nextEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="📅 9:00 AM - Team Meeting"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_medium"
+            android:alpha="0.8" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Challenge Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/challengeCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_background_dark"
+            app:cardCornerRadius="@dimen/radius_large"
+            app:cardElevation="@dimen/elevation_high"
+            android:layout_marginBottom="@dimen/spacing_large">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_large"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MATH CHALLENGE"
+                    android:textColor="@color/primary_orange"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1" />
+
+                <TextView
+                    android:id="@+id/challengeQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:layout_marginBottom="@dimen/spacing_large"
+                    android:text="12 + 7 = ?"
+                    android:textColor="@color/text_light"
+                    android:textSize="48sp"
+                    android:textStyle="bold" />
+
+                <!-- Custom Keypad -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="3"
+                    android:rowCount="4"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false"
+                    android:padding="@dimen/spacing_small">
+
+                    <!-- Row 1 -->
+                    <TextView
+                        android:id="@+id/btn1"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="1"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn2"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="2"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn3"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="3"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <!-- Row 2 -->
+                    <TextView
+                        android:id="@+id/btn4"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="4"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn5"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="5"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn6"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="6"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <!-- Row 3 -->
+                    <TextView
+                        android:id="@+id/btn7"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="7"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn8"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="8"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn9"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="9"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <!-- Row 4 -->
+                    <TextView
+                        android:id="@+id/btnClear"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="C"
+                        android:textColor="@color/error"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btn0"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="0"
+                        android:textColor="@color/text_light"
+                        android:textSize="24sp"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/spacing_tiny"
+                        android:text="✓"
+                        android:textColor="@color/success"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="@drawable/keypad_button"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bottom Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/spacing_large">
+
+            <LinearLayout
+                android:id="@+id/snoozeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏸️"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SNOOZE (5m)"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginTop="@dimen/spacing_tiny" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:id="@+id/musicButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎵"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MUSIC"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginTop="@dimen/spacing_tiny" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

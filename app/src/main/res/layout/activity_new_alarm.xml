@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_medium">
+
+    <!-- Header - stays fixed at top -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/spacing_medium">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_light" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NEW ALARM"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_xlarge"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <!-- ScrollView for all the content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Time Picker Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                app:cardBackgroundColor="@color/card_background_dark"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/selectedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7:30 AM"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_xxxlarge"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginBottom="@dimen/spacing_medium" />
+
+                    <TimePicker
+                        android:id="@+id/timePicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:timePickerMode="spinner"
+                        android:theme="@style/TimePickerTheme" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat Days -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REPEAT"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:weightSum="7"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <!-- Day buttons as TextViews -->
+                <TextView
+                    android:id="@+id/daySun"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="S"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_selected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/dayMon"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="M"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_selected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/dayTue"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="T"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_selected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/dayWed"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="W"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_selected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/dayThu"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="T"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_selected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/dayFri"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="F"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_selected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/daySat"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="S"
+                    android:gravity="center"
+                    android:background="@drawable/day_button_unselected"
+                    android:textColor="@color/text_light"
+                    android:layout_margin="@dimen/spacing_tiny"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <!-- Challenge Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHALLENGE TYPE"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <Spinner
+                android:id="@+id/challengeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background_dark"
+                android:padding="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_large" />
+
+            <!-- Difficulty -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DIFFICULTY"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <Spinner
+                android:id="@+id/difficultySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background_dark"
+                android:padding="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_large" />
+
+            <!-- Music Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WAKE-UP MUSIC"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/musicCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_background_dark"
+                app:cardCornerRadius="@dimen/radius_medium"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_medium"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:text="📁"
+                        android:textSize="24sp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/musicFolderText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LOCAL MUSIC"
+                            android:textColor="@color/text_light"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/musicSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upbeat Morning Mix • 24 songs"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_small" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Guardian Angel Toggle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_medium">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Guardian Angel"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_medium" />
+
+                <TextView
+                    android:id="@+id/guardianTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15 min"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_medium"
+                    android:layout_marginEnd="@dimen/spacing_medium"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/guardianSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:thumbTint="@color/primary_orange"
+                    android:trackTint="@color/primary_orange" />
+            </LinearLayout>
+
+            <!-- Calendar Sync Toggle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Calendar Sync"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_medium" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/calendarSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:thumbTint="@color/primary_orange"
+                    android:trackTint="@color/primary_orange" />
+            </LinearLayout>
+            <!-- No Music Option -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/spacing_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OR"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_small"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/spacing_small"
+                    android:layout_gravity="center" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/noMusicCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/card_background_dark"
+                    app:cardCornerRadius="@dimen/radius_medium"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginBottom="@dimen/spacing_large">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/spacing_medium"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:text="🔕"
+                            android:textSize="24sp"
+                            android:gravity="center" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/spacing_medium"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No Music"
+                                android:textColor="@color/text_light"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alarm will use default sound"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_small" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="›"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btnSaveAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:text="SAVE ALARM"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                android:background="@drawable/button_primary" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

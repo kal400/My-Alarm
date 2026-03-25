@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_medium">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/text_light" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="INSIGHTS"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_xlarge"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/spacing_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Weekly Score Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_background_dark"
+                app:cardCornerRadius="@dimen/radius_large"
+                app:cardElevation="@dimen/elevation_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="THIS WEEK'S SCORE"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_small"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:orientation="horizontal"
+                        android:gravity="bottom|center_horizontal">
+
+                        <TextView
+                            android:id="@+id/weeklyScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="82"
+                            android:textColor="@color/text_light"
+                            android:textSize="48sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-light" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="%"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_xlarge"
+                            android:layout_marginStart="@dimen/spacing_tiny" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:id="@+id/weeklyScoreChange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_medium"
+                            android:text="▲ 5% from last week"
+                            android:textColor="@color/success"
+                            android:textSize="@dimen/text_small"
+                            android:background="#4CAF5022"
+                            android:padding="@dimen/spacing_tiny" />  <!-- ✓ Properly closed -->
+                    </LinearLayout>
+
+                    <!-- Progress Dots -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/progressDots"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:text="●●●●●●●●○○"
+                            android:textColor="@color/primary_orange"
+                            android:textSize="20sp"
+                            android:letterSpacing="0.1" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_small"
+                            android:text="8/10 days"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_small" />  <!-- ✓ Properly closed -->
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Wake-up Trends -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="WAKE-UP TRENDS"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />  <!-- ✓ Properly closed -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="@color/card_background_dark"
+                app:cardCornerRadius="@dimen/radius_large">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <!-- Simple Chart Representation -->
+                    <TextView
+                        android:id="@+id/chartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="    ▲\n   █ █\n  █ █ █     █\n █ █ █ █ █ █ █\n M T W T F S S M"
+                        android:textColor="@color/text_light"
+                        android:textSize="14sp"
+                        android:fontFamily="monospace"
+                        android:lineSpacingExtra="4dp" />  <!-- ✓ Properly closed -->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Challenge Performance -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="CHALLENGE PERFORMANCE"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />  <!-- ✓ Properly closed -->
+
+            <!-- Challenge Stats Container -->
+            <LinearLayout
+                android:id="@+id/challengeStatsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/spacing_small">
+                <!-- Dynamic content will be added here -->
+            </LinearLayout>
+
+            <!-- Guardian Angel Stats -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="GUARDIAN ANGEL"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />  <!-- ✓ Properly closed -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="@color/card_background_dark"
+                app:cardCornerRadius="@dimen/radius_large">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Activated:"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_medium" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:id="@+id/guardianActivated"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="2 times this month"
+                            android:textColor="@color/text_light"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            android:gravity="end" />  <!-- ✓ Properly closed -->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Avg lateness:"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_medium" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:id="@+id/guardianLateness"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12 minutes"
+                            android:textColor="@color/text_light"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            android:gravity="end" />  <!-- ✓ Properly closed -->
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Timer Stats -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="TIMER PUNCTUALITY"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />  <!-- ✓ Properly closed -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_large"
+                app:cardBackgroundColor="@color/card_background_dark"
+                app:cardCornerRadius="@dimen/radius_large">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="On-time:"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_medium" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:id="@+id/timerPunctuality"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="84%"
+                            android:textColor="@color/text_light"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            android:gravity="end" />  <!-- ✓ Properly closed -->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total timers:"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_medium" />  <!-- ✓ Properly closed -->
+
+                        <TextView
+                            android:id="@+id/timerTotal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="42"
+                            android:textColor="@color/text_light"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            android:gravity="end" />  <!-- ✓ Properly closed -->
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- View All Button -->
+            <Button
+                android:id="@+id/btnViewAllStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:text="VIEW ALL STATS"
+                android:textColor="@color/text_light"
+                android:textSize="@dimen/text_medium"
+                android:background="@drawable/button_secondary" />  <!-- ✓ Properly closed -->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

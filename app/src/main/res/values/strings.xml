@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Alarm</string>
+    <string name="greeting">GOOD MORNING</string>
+    <string name="next_alarm">NEXT ALARM: 7:30 AM</string>
+    <string name="active_timers">TIMERS: 2</string>
+    <string name="sleep">Sleep</string>
+    <string name="stats">Stats</string>
+    <string name="profile">Profile</string>
+    <string name="new_alarm">NEW ALARM</string>
+    <string name="save_alarm">SAVE ALARM</string>
+    <string name="guardian_angel">Guardian Angel</string>
+    <string name="calendar_sync">Calendar Sync</string>
+    <string name="wake_up_music">WAKE-UP MUSIC</string>
+    <string name="local_music">LOCAL MUSIC</string>
+    <string name="music_subtitle">Upbeat Morning Mix • 24 songs</string>
+    <string name="default_notification_channel_id">alarm_channel</string>
+    <string name="alarm_channel_name">Alarm Notifications</string>
+    <string name="alarm_channel_description">Channel for alarm notifications</string>
+    <string name="music_channel_name">Music Playback</string>
+    <string name="music_channel_description">Channel for music playback</string>
+    <string name="sleep_channel_name">Sleep Tracking</string>
+    <string name="sleep_channel_description">Channel for sleep tracking service</string>
+</resources>
